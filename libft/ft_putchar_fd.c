@@ -1,46 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 16:29:32 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/22 17:37:09 by pesrisaw         ###   ########.fr       */
+/*   Created: 2024/02/21 18:00:18 by pesrisaw          #+#    #+#             */
+/*   Updated: 2024/02/21 18:00:25 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
+// #include <unistd.h>
 
-static int	count_word(char const *s, char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t	i;
-	int		count;
-	i = 0;
-	if (!*s)
-		return (0);
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
-			count++;
-		while (s[i] != c && s[i])
-			i++;
-	}
-	return (count);
+	write(fd, &c, 1);
 }
 
-char	**ft_split(char const *s, char c)
-{
-	
-}
-
-int	main()
-{
-	char	str[] = "Peerapol Srisawat";
-	char	ch = ' ';
-
-}
+// int	main()
+// {
+// 	ft_putchar_fd('B', 1);
+// }
