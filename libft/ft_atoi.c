@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:36:59 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:28:22 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 01:37:13 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	s;
-	int	t;
+	size_t	i;
+	long	s;
+	long	t;
 
 	i = 0;
 	s = 1;

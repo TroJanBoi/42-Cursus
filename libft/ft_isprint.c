@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:33:13 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:30:02 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 02:03:46 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_isprint(int c)
 {
-	if (c >= 1 && c <= 31 && c != 127)
-		return (0);
-	return (1);
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
 
 // #include <stdio.h>

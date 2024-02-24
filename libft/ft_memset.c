@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:01:22 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:41:23 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 01:04:51 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;
-	int				i;
+	size_t			i;
 
 	i = 0;
 	p = (unsigned char *) s;

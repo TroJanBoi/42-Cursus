@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:09:29 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:41:48 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 01:13:52 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*nb;
-
 	if (n == -2147483648)
 	{
 		ft_putstr_fd("-2147483648", fd);

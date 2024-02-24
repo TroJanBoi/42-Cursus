@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:36:34 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:28:34 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 01:11:56 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ptr = (void *) malloc(nmemb * size);
 	if (!ptr)
 		return (0);
-	bzero(ptr, nmemb * size);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }
 

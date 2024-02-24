@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 17:03:35 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:42:31 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 01:10:10 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	count;
+	size_t	i;
 
-	count = 0;
 	i = 0;
 	while (i < n)
 	{
