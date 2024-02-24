@@ -6,13 +6,11 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:04:39 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/21 16:31:44 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/24 22:42:45 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <stdlib.h>
-// #include <string.h>
+#include "libft.h"
 
 static int	set_char(char c, char const *set)
 {
@@ -37,7 +35,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	start = 0;
 	i = 0;
-	end = strlen(s1);
+	end = ft_strlen(s1);
 	while (s1[start] && set_char(s1[start], set))
 		start++;
 	while (end > start && set_char(s1[end - 1], set))

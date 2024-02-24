@@ -1,23 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/24 19:28:39 by pesrisaw          #+#    #+#             */
+/*   Updated: 2024/02/24 19:28:39 by pesrisaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-void    ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    if (!lst || !new)
-        return ;
-    // printf("|%s|\n", new);
-    if (*lst == '\0')
-    {
-        *lst = new;
-        return ;
-    }
-    tmp = *lst;
-    while (tmp->next)
-        tmp = tmp->next;
-    tmp->next = new;
+	if (!lst || !new)
+		return ;
+	if (*lst == '\0')
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = *lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = new;
 }
 
 // int main()
@@ -41,5 +50,4 @@ void    ft_lstadd_back(t_list **lst, t_list *new)
 //         printf("|%s|\n", cur->content);
 //         cur = cur->next;
 //     }
-    
 // }

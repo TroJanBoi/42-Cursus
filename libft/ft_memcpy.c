@@ -6,12 +6,11 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 11:31:42 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/21 16:31:44 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/24 22:41:12 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/24 22:26:48 by pesrisaw          #+#    #+#             */
+/*   Updated: 2024/02/24 22:26:48 by pesrisaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // #include "libft.h"
 
 // t_list lstnew (void *content)
@@ -64,9 +76,6 @@
 // 	return (first);
 // }
 
-
-
-
 // /* main */
 
 // void    ft_del(void *content)
@@ -84,7 +93,6 @@
 //     t_list *head = NULL;
 //     t_list *new_list = NULL;
 
-
 //     ft_lstadd_back(&head, ft_lstnew("first"));
 //     ft_lstadd_back(&head, ft_lstnew("second"));
 //     ft_lstadd_back(&head, ft_lstnew("third"));
@@ -96,97 +104,93 @@
 //     return 0;
 // }
 
+// #include "libft.h"
+// #include <string.h>
 
+// static t_list	*lst_new(void *content)
+// {
+// 	t_list	*new;
 
-#include "libft.h"
-#include <string.h>
+// 	new = (t_list *)malloc(sizeof(t_list));
+// 	if (!new)
+// 		return (NULL);
+// 	new->content = content;
+// 	new->next = NULL;
+// 	return (new);
+// }
 
+// static void	lst_clear(t_list **lst, void (*del)(void *))
+// {
+// 	if (!lst || !del || !(*lst))
+// 		return ;
+// 	lst_clear(&(*lst)->next, del);
+// 	(del)((*lst)->content);
+// 	free(*lst);
+// 	*lst = NULL;
+// }
 
-static t_list	*lst_new(void *content)
-{
-	t_list	*new;
+// static void	lstadd_back(t_list **lst, t_list *new)
+// {
+// 	t_list	*ptr;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
-}
+// 	if (!lst || !new)
+// 		return ;
+// 	if (!(*lst))
+// 	{
+// 		*lst = new;
+// 		return ;
+// 	}
+// 	ptr = *lst;
+// 	while (ptr->next)
+// 		ptr = ptr->next;
+// 	ptr->next = new;
+// }
 
-static void	lst_clear(t_list **lst, void (*del)(void *))
-{
-	if (!lst || !del || !(*lst))
-		return ;
-	lst_clear(&(*lst)->next, del);
-	(del)((*lst)->content);
-	free(*lst);
-	*lst = NULL;
-}
+// t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+// {
+// 	t_list	*new_list;
+// 	t_list	*new_node;
+// 	void	*set;
 
-static void	lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*ptr;
+// 	if (!lst || !f || !del)
+// 		return (NULL);
+// 	new_list = NULL;
+// 	while (lst)
+// 	{
+// 		set = f(lst->content);
+// 		new_node = lst_new(set);
+// 		if (!new_node)
+// 		{
+// 			del(set);
+// 			lst_clear(&new_list, (*del));
+// 			return (new_list);
+// 		}
+// 		lstadd_back(&new_list, new_node);
+// 		lst = lst->next;
+// 	}
+// 	return (new_list);
+// }
 
-	if (!lst || !new)
-		return ;
-	if (!(*lst))
-	{
-		*lst = new;
-		return ;
-	}
-	ptr = *lst;
-	while (ptr->next)
-		ptr = ptr->next;
-	ptr->next = new;
-}
+// void *transform_content(void *content)
+// {
+//     // Check if the content pointer is valid
+//     if (content == NULL) {
+//         return NULL;
+// }
+//     char *str = (char *)content;
+//     char *result = strdup(str); // Duplicate the original content
+//     // Convert each character in the duplicated string to uppercase
+//     for (size_t i = 0; result[i]; i++) {
+//         result[i] = ft_toupper(result[i]);
+//     }
+//     return result;
+// }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*new_list;
-	t_list	*new_node;
-	void	*set;
+// void free_content(void *content)
+// {
+//     free(content);
+// }
 
-	if (!lst || !f || !del)
-		return (NULL);
-	new_list = NULL;
-	while (lst)
-	{
-		set = f(lst->content);
-		new_node = lst_new(set);
-		if (!new_node)
-		{
-			del(set);
-			lst_clear(&new_list, (*del));
-			return (new_list);
-		}
-		lstadd_back(&new_list, new_node);
-		lst = lst->next;
-	}
-	return (new_list);
-}
-
-void *transform_content(void *content)
-{
-    // Check if the content pointer is valid
-    if (content == NULL) {
-        return NULL;
-}
-    char *str = (char *)content;
-    char *result = strdup(str); // Duplicate the original content
-    // Convert each character in the duplicated string to uppercase
-    for (size_t i = 0; result[i]; i++) {
-        result[i] = ft_toupper(result[i]);
-    }
-    return result;
-}
-
-void free_content(void *content)
-{
-    free(content);
-}
-
-t_list *lst = lst_new("hello");
-lstadd_back(&lst, lst_new("world"));
-t_list *new_lst = ft_lstmap(lst, transform_content, free_content);
-
+// t_list *lst = lst_new("hello");
+// lstadd_back(&lst, lst_new("world"));
+// t_list *new_lst = ft_lstmap(lst, transform_content, free_content);

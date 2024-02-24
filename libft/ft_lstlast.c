@@ -1,14 +1,24 @@
-#include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/24 22:31:31 by pesrisaw          #+#    #+#             */
+/*   Updated: 2024/02/24 22:31:31 by pesrisaw         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-t_list *ft_lstlast(t_list *lst)
+#include "libft.h"
+
+t_list	*ft_lstlast(t_list *lst)
 {
-    if (!lst)
-        return (0);
-    while (lst->next)
-       lst = lst->next;
-    return (lst);
+	if (!lst)
+		return (0);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
 
 // void    ft_lstadd_front(t_list **lst, t_list *new)
@@ -40,9 +50,7 @@ t_list *ft_lstlast(t_list *lst)
 //     third->next = NULL;
 
 //     ft_lstadd_front(&head, third);
-    
 //     t_list *node = ft_lstlast(head);
-    
 //     printf("node : %s\n", (char *)node->content);
 
 //     t_list *node_head = head;
@@ -51,5 +59,4 @@ t_list *ft_lstlast(t_list *lst)
 //         printf("|%s|\n", (char *)node_head->content);
 //         node_head = node_head->next;
 //     }
-    
 // }

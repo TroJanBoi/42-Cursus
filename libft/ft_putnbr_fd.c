@@ -6,13 +6,11 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 19:09:29 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/21 20:02:19 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/24 22:41:48 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <unistd.h>
-// #include "ft_putchar_fd.c"
-// #include "ft_putstr_fd.c"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

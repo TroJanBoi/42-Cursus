@@ -6,41 +6,89 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:29:32 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/22 17:37:09 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/24 23:04:33 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
+#include "libft.h"
 
-static int	count_word(char const *s, char c)
+static size_t	count_words(char const *s, char c)
 {
+	size_t	count;
 	size_t	i;
-	int		count;
+
+	count = 0;
 	i = 0;
-	if (!*s)
-		return (0);
-	while (s[i])
+	while (*(s + i))
 	{
-		while (s[i] == c)
-			i++;
-		if (s[i])
+		if (*(s + i) != c)
+		{
 			count++;
-		while (s[i] != c && s[i])
+			while (*(s + i) && *(s + i) != c)
+				i++;
+		}
+		else if (*(s + i) == c)
 			i++;
 	}
 	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static size_t	get_word_len(char const *s, char c)
 {
-	
+	size_t	i;
+
+	i = 0;
+	while (*(s + i) && *(s + i) != c)
+		i++;
+	return (i);
 }
 
-int	main()
+static void	free_array(size_t i, char **array)
 {
-	char	str[] = "Peerapol Srisawat";
-	char	ch = ' ';
+	while (i > 0)
+	{
+		i--;
+		free(*(array + i));
+	}
+	free(array);
+}
 
+static char	**split(char const *s, char c, char **array, size_t words_count)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (i < words_count)
+	{
+		while (*(s + j) && *(s + j) == c)
+			j++;
+		*(array + i) = ft_substr(s, j, get_word_len(&*(s + j), c));
+		if (!*(array + i))
+		{
+			free_array(i, array);
+			return (NULL);
+		}
+		while (*(s + j) && *(s + j) != c)
+			j++;
+		i++;
+	}
+	*(array + i) = NULL;
+	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	size_t	words;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	array = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!array)
+		return (NULL);
+	array = split(s, c, array, words);
+	return (array);
 }

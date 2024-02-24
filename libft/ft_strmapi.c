@@ -1,48 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 16:06:53 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 17:59:32 by pesrisaw         ###   ########.fr       */
+/*   Created: 2024/02/22 17:55:23 by pesrisaw          #+#    #+#             */
+/*   Updated: 2024/02/24 22:37:59 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
-// #include <stddef.h>
-// #include <stdlib.h>
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*ptr;
 	unsigned int	i;
 
 	i = 0;
-	ptr = (char *)malloc(len + 1);
-	if (*s == '\0' || !ptr)
+	ptr = malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!s || !ptr)
 		return (0);
-	while (s[start] != '\0' && i < len)
+	while (s[i] != '\0')
 	{
-		ptr[i] = s[start];
-		start++;
+		ptr[i] = f(i, s[i]);
 		i++;
 	}
 	ptr[i] = '\0';
 	return (ptr);
 }
 
+// char	function_test(unsigned int i, char s)
+// {
+// 	printf("Function : %d and %c\n", i, s);
+// 	return (0);
+// }
+
 // int	main()
 // {
-// 	char	str[] = "Peerapol Boat Srisawat";
+// 	char	str[] = "Peerapol";
+// 	// printf("I am %s", str);
 // 	char	*ret;
-// 	char	*ret2;
-
-// 	ret = ft_substr(str, 0, 13);
+// 	ret = ft_strmapi(str, function_test);
 // 	printf("%s\n", ret);
-
-// 	ret2 = ft_substr(str, 0, -1);
-// 	printf("%s", ret2);
 // }
+	// int i ;
+
+	// &i == address of i; %p
+	// char *ste = "hello"
+
+	// ste == address of 1st char
+	// *ste == 'h'
