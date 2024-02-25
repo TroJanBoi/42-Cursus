@@ -6,24 +6,32 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 20:36:59 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 01:37:13 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 17:24:46 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	sign_overflow(long s)
+{
+	if (s > 0)
+		return (-1);
+	else
+		return (0);
+}
+
 int	ft_atoi(const char *nptr)
 {
 	size_t	i;
 	long	s;
-	long	t;
+	long	ret;
 
 	i = 0;
 	s = 1;
-	t = 0;
+	ret = 0;
 	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	while (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
 		{
@@ -33,16 +41,19 @@ int	ft_atoi(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		t = t * 10 + (nptr[i] - 48);
+		ret = (ret * 10) + (nptr[i] - 48);
 		i++;
+		if (ret < 0)
+			return (sign_overflow(s));
 	}
-	return (t * s);
+	return (ret * s);
 }
 
 // int	main()
 // {
-// 	char	str[] = "-900#00";
-
-// 	printf("%d\n", atoi(str));
+// 	char	str[] = "-90000000000000000000000000000000#00";
 // 	printf("%d", ft_atoi(str));
+
+// 	char	str2[] = "90000000000000000000000000000000";
+// 	printf("\n%d", ft_atoi(str2));
 // }

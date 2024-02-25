@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:04:39 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:42:45 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:40:33 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	while (end > start && set_char(s1[end - 1], set))
 		end--;
-	ptr = (char *)malloc(sizeof(s1) * (end + start));
+	ptr = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!ptr)
 		return (0);
 	while (start < end)

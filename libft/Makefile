@@ -6,7 +6,7 @@
 #    By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/25 01:01:11 by pesrisaw          #+#    #+#              #
-#    Updated: 2024/02/25 02:36:39 by pesrisaw         ###   ########.fr        #
+#    Updated: 2024/02/25 16:19:39 by pesrisaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,16 +50,17 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_striteri
 
-# FILES_B = 	ft_lstnew \
-# 	  		ft_lstadd_front \
-# 	  		ft_lstsize \
-# 	  		ft_lstlast \
-# 	  		ft_lstadd_back \
-# 	  		ft_lstdelone \
-# 	  		ft_lstclear \
-# 	  		ft_lstiter \
-# 	  		ft_lstmap
+FILES_B = 	ft_lstnew \
+	  		ft_lstadd_front \
+	  		ft_lstsize \
+	  		ft_lstlast \
+	  		ft_lstadd_back \
+	  		ft_lstdelone \
+	  		ft_lstclear \
+	  		ft_lstiter \
+	  		ft_lstmap
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
@@ -76,7 +77,7 @@ OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 $(NAME): $(OBJS)
 	$(AR) $@ $^
 
-bonus: $(OBJS_B)
+bonus:$(OBJS) $(OBJS_B)
 	$(AR) $(NAME) $^
 
 all: $(NAME)

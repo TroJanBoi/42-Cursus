@@ -23,10 +23,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 }
 /* main */
 
-void	ft_del(void *content)
-{
-	free(content);
-}
+// void	ft_del(void *content)
+// {
+// 	free(content);
+// }
 
 // int main()
 // {

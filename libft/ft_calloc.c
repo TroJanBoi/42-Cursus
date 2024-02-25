@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:36:34 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 01:11:56 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 17:33:12 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	ptr = (void *) malloc(nmemb * size);
+	if (nmemb && size && nmemb > (sizeof(unsigned int) / size))
+		return (NULL);
+	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (0);
 	ft_bzero(ptr, nmemb * size);

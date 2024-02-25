@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 18:01:43 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 01:08:49 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 13:30:55 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (i < n)
 	{
 		if (p1[i] != p2[i])
-			return ((int) p1[i] - (int) p2[i]);
+			return (p1[i] - p2[i]);
 		i++;
 	}
-	return ((int) p1[i] - (int) p2[i]);
+	return (0);
 }
 
 // int	main()
@@ -36,5 +36,5 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 // 	char	str2[] = "Peerapol";
 
 // 	printf("| %d |\n", memcmp(str1 + 5, str2, 8));
-// 	printf("| %d |", ft_memcmp(str1 + 5, str2, 8));
+// 	printf("| %d |", ft_memcmp(str1, str2, 8));
 // }
