@@ -6,13 +6,13 @@
 #    By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/25 01:01:11 by pesrisaw          #+#    #+#              #
-#    Updated: 2024/02/25 16:19:39 by pesrisaw         ###   ########.fr        #
+#    Updated: 2024/02/28 01:14:40 by pesrisaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
@@ -52,15 +52,14 @@ FILES = ft_memset \
 		ft_putnbr_fd \
 		ft_striteri
 
-FILES_B = 	ft_lstnew \
-	  		ft_lstadd_front \
-	  		ft_lstsize \
-	  		ft_lstlast \
-	  		ft_lstadd_back \
-	  		ft_lstdelone \
-	  		ft_lstclear \
-	  		ft_lstiter \
-	  		ft_lstmap
+FILES_B = 	ft_lstnew_bonus \
+	  		ft_lstadd_front_bonus \
+	  		ft_lstsize_bonus \
+	  		ft_lstlast_bonus \
+	  		ft_lstadd_back_bonus \
+	  		ft_lstdelone_bonus \
+	  		ft_lstclear_bonus \
+	  		ft_lstiter_bonus 
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))

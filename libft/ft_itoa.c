@@ -6,13 +6,13 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:17:50 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 15:25:22 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:31:18 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	num_base(int n, int base)
+static unsigned int	num_base(int n, int base)
 {
 	int	i;
 
@@ -60,7 +60,7 @@ char	*ft_itoa(int n)
 // 	int	nbr = 123;
 // 	int num = -123;
 // 	int zero = 0;
-// 	long int min = -21474836498;
+// 	long int min = -2147483648;
 
 // 	printf("Answer : %s\n", ft_itoa(nbr));
 // 	printf("Answer : %s\n", ft_itoa(num));

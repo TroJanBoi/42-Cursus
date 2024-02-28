@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 19:36:34 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 17:33:12 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/28 02:59:18 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
+	size_t	result;
 
-	if (nmemb && size && nmemb > (sizeof(unsigned int) / size))
+	if (nmemb && size && nmemb > (UINT_MAX / size))
 		return (NULL);
-	ptr = malloc(nmemb * size);
+	result = nmemb * size;
+	ptr = malloc(result);
 	if (!ptr)
 		return (0);
-	ft_bzero(ptr, nmemb * size);
+	ft_bzero(ptr, result);
 	return (ptr);
 }
 

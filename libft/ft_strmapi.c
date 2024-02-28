@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 17:55:23 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:37:59 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 22:37:26 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,10 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // 	ret = ft_strmapi(str, function_test);
 // 	printf("%s\n", ret);
 // }
-	// int i ;
+// 	// int i ;
 
-	// &i == address of i; %p
-	// char *ste = "hello"
+// 	// &i == address of i; %p
+// 	// char *ste = "hello"
 
-	// ste == address of 1st char
-	// *ste == 'h'
+// 	// ste == address of 1st char
+// 	// *ste == 'h'

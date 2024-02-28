@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 17:04:39 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 14:40:33 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 23:33:42 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int	main()
 // {
-// 	char	str[] = "*|Peerapol**Srisawat|*";
+// 	char	str[] = "|*Peerapol**Srisawat|*";
 // 	char	ch[] = "*|";
 // 	char	*ret;
 

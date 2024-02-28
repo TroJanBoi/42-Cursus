@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 18:15:42 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/25 02:38:13 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/28 12:19:51 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
+
+// #include <stdio.h>
 
 // int main() {
 // 	char big[] = "PEERAPOL BOAT SRISAWAT";

@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 16:29:32 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 23:04:33 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:42:30 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static size_t	get_word_len(char const *s, char c)
+static size_t	word_len(char const *s, char c)
 {
 	size_t	i;
 
@@ -43,7 +43,7 @@ static size_t	get_word_len(char const *s, char c)
 	return (i);
 }
 
-static void	free_array(size_t i, char **array)
+static void	ft_free(size_t i, char **array)
 {
 	while (i > 0)
 	{
@@ -64,10 +64,10 @@ static char	**split(char const *s, char c, char **array, size_t words_count)
 	{
 		while (*(s + j) && *(s + j) == c)
 			j++;
-		*(array + i) = ft_substr(s, j, get_word_len(&*(s + j), c));
+		*(array + i) = ft_substr(s, j, word_len(&*(s + j), c));
 		if (!*(array + i))
 		{
-			free_array(i, array);
+			ft_free(i, array);
 			return (NULL);
 		}
 		while (*(s + j) && *(s + j) != c)

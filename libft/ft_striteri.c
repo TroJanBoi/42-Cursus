@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 12:43:40 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/02/24 22:42:05 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/02/25 23:33:21 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 // void	ft_write(unsigned int n, char *s)
 // {
-// 	printf("String : %d and %s\n", n, ft_toupper(s));
+// 	printf("String : %d and %s\n", n, s);
 // }
 
 // int	main()
