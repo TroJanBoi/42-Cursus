@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_print_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 09:29:45 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/03/26 20:47:49 by pesrisaw         ###   ########.fr       */
+/*   Created: 2024/03/26 15:11:03 by pesrisaw          #+#    #+#             */
+/*   Updated: 2024/03/26 22:15:04 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF
-#define LIBFTPRINTF
+#include "libftprintf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_print_str(const char *str)
+{
+	int	i;
 
-// char	*ft_char(char *str);
-// int		ft_printf(const char *format, ...);
-int		ft_print_char(char c);
-int		ft_print_str(const char *str);
-int		ft_print_num(int n);
-#endif
+	i = 0;
+	if (*str)
+	{
+		while (str[i] != '\0')
+		{
+			write (1, &str[i], 1);
+			i++;
+		}
+	}
+	else
+	{
+		ft_print_str("(null)");
+	}
+	return (i);
+}

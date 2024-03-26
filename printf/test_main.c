@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:36:14 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/03/24 21:12:03 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/03/26 22:06:03 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ int	main()
 	printf("\n------------end------------\n");
 
 	printf("\n----s string test case----\n");
-	if (printf("Peerapol") == ft_print_str("Peerapol"))
+	if (printf(NULL) == ft_print_str(NULL))
 		printf("\nSuccess\n");
-	int	str1 = printf("");
-	int	str2 = ft_print_str("");
+	int	str1 = printf(NULL);
+	int	str2 = ft_print_str(NULL);
 	printf("\nExm : %d", str1);
 	printf("\nAns : %d", str2);
 	printf("\n-----------end-----------\n");
@@ -66,6 +66,13 @@ int	main()
 	printf("%i\n", octal);
 	printf("%i", hex);
 	printf("\n-----------------end-----------------\n");
+
+	int	deci = 0x12;
+
+	printf("i: %i\n", deci);
+	printf("d: %d", deci);
+
+	
 	// printf("\n---p pointer test case---\n");
 	// int	np = 21;
 	// int	ptr = printf("%p", &np);
@@ -73,5 +80,6 @@ int	main()
 	// printf("\nEmx int : %d", ptr);
 	// printf("\nExm chr : %d", ptr2);
 	// printf("\n-----------end-----------\n");
+
 
 }

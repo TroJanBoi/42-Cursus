@@ -6,7 +6,7 @@
 #    By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 15:56:56 by pesrisaw          #+#    #+#              #
-#    Updated: 2024/03/24 20:44:09 by pesrisaw         ###   ########.fr        #
+#    Updated: 2024/03/26 20:50:14 by pesrisaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,10 +14,12 @@ NAME = libftprintf.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
-RM = rm -f
+RM = rm -rf
 
 FILE =	ft_printf \
 		ft_print_num \
+		ft_print_char \
+		ft_print_str \
 		test_main # for test and remove
 
 SRCS_DIR =	./
