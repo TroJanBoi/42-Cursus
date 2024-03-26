@@ -6,7 +6,7 @@
 #    By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/02 15:56:56 by pesrisaw          #+#    #+#              #
-#    Updated: 2024/03/14 18:05:13 by pesrisaw         ###   ########.fr        #
+#    Updated: 2024/03/24 20:44:09 by pesrisaw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ AR = ar rcs
 RM = rm -f
 
 FILE =	ft_printf \
-		ft_itoa \
+		ft_print_num \
 		test_main # for test and remove
 
 SRCS_DIR =	./

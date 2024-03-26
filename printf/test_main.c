@@ -6,7 +6,7 @@
 /*   By: pesrisaw <pesrisaw@student.42bangkok.com>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 09:36:14 by pesrisaw          #+#    #+#             */
-/*   Updated: 2024/03/14 18:15:38 by pesrisaw         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:12:03 by pesrisaw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 int	main()
 {
 	char	c = 'Y';
+	int	decimal = 12;
+	int	octal = 012;
+	int	hex = 0x12;
 	
 	printf("---c character test case---\n");
 	if (printf("H") == ft_print_char('H'))
@@ -24,9 +27,9 @@ int	main()
 	int	chr2 = ft_print_char('Y');
 	printf("\nExm : %d", chr1);
 	printf("\nAns : %d", chr2);
-	printf("\n-----------end-----------\n");
+	printf("\n------------end------------\n");
 
-	printf("\n---s string test case----\n");
+	printf("\n----s string test case----\n");
 	if (printf("Peerapol") == ft_print_str("Peerapol"))
 		printf("\nSuccess\n");
 	int	str1 = printf("");
@@ -35,20 +38,40 @@ int	main()
 	printf("\nAns : %d", str2);
 	printf("\n-----------end-----------\n");
 
-	printf("\n---d decimal test case----\n");
-	if (printf("%d", -21) == ft_itoa(-21))
+	printf("\n---d decimal test case---\n");
+	if (printf("%d", decimal) == ft_print_num(decimal))
 		printf("\nSuccess\n");
-	int	dec1 = printf("%d", -21);
-	int	dec2 = ft_itoa(-21);
+	int	dec1 = printf("%d", decimal);
+	int	dec2 = ft_print_num(decimal);
 	printf("\nExm : %d", dec1);
 	printf("\nAns : %d", dec2);
+	printf("\n-------EPISODE 1--------\n");
+	if (printf("%d", octal) == ft_print_num(octal))
+		printf("\nSuccess\n");
+	int	dec3 = printf("%d", octal);
+	int	dec4 = ft_print_num(octal);
+	printf("\nExm : %d", dec3);
+	printf("\nAns : %d", dec4);
+	printf("\n-------EPISODE 2--------\n");
+	if (printf("%d", hex) == ft_print_num(hex))
+		printf("\nSuccess\n");
+	int	dec5 = printf("%d", hex);
+	int	dec6 = ft_print_num(hex);
+	printf("\nExm : %d", dec5);
+	printf("\nAns : %d", dec6);
 	printf("\n-----------end-----------\n");
 
-	printf("\n---p pointer test case---\n");
-	int	np = 21;
-	int	ptr = printf("%p", &np);
+	printf("\n---i integer in base 10 test case----\n");
+	printf("%i\n", decimal);
+	printf("%i\n", octal);
+	printf("%i", hex);
+	printf("\n-----------------end-----------------\n");
+	// printf("\n---p pointer test case---\n");
+	// int	np = 21;
+	// int	ptr = printf("%p", &np);
 	// int	ptr2 = printf("%p", &c);
-	printf("\nEmx int : %d", ptr);
+	// printf("\nEmx int : %d", ptr);
 	// printf("\nExm chr : %d", ptr2);
-	printf("\n-----------end-----------\n");
+	// printf("\n-----------end-----------\n");
+
 }
